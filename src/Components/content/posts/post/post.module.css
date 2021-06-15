@@ -1,0 +1,22 @@
+.postCon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+}
+
+.postAva{
+    width: 50px;
+    border-radius: 25px;
+}
+
+.postText{
+    width: 80%;
+    padding-left: 25px;
+}
+
+.likes{
+    text-align: right;
+    color: red;
+}

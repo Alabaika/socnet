@@ -1,0 +1,33 @@
+.accHeader{
+    grid-area: ac;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .avatar{
+    grid-area: av;
+    width: 150px;
+  }
+  
+  .info{
+    text-align: left;
+    grid-area: in;
+  }
+  
+  .name{
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .profile{
+    padding: 10px;
+    display: grid;
+    grid-template-areas: 
+    "ac ac"
+    "av in"
+    ;
+    grid-template-columns: 170px 1fr;
+    grid-template-rows:  4;
+    grid-gap: 10px;
+  }
