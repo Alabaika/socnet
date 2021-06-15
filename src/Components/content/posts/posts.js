@@ -1,5 +1,5 @@
 import postClass from './posts.module.css'
-import Post from './post/Post.jsx'
+import Post from './post/Post'
 
 const Posts = () => {
     return (

@@ -1,6 +1,6 @@
 import contClasses from './content.module.css'
-import Profile from './profile/profile.jsx'
-import Posts from './posts/posts.jsx'
+import Profile from './profile/profile'
+import Posts from './posts/posts'
 
 
 const Content = () => {
