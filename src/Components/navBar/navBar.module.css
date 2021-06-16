@@ -7,5 +7,12 @@
 .nav a{
     padding: 10px;
     display: block;
+    text-decoration: none;
+    color: rgb(63, 63, 63);
+}
+
+.nav a.active{
+    color: rgb(20, 20, 20);
+    font-weight: 600;
 }
   
