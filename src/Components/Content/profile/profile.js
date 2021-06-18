@@ -3,11 +3,14 @@ import Acc from './account/acc'
 import Posts from './posts/posts'
 
 
-const Profile = () => {
+const Profile = (props) => {
+
+
+
     return (
         <div>
             <Acc />
-            <Posts />
+            <Posts postData={props.postData}/>
         </div>
     )
 }
