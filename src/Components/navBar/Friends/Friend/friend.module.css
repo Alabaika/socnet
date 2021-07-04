@@ -1,0 +1,18 @@
+.friendName{
+    font-size: 14px;
+    color: black;
+    font-weight: lighter;
+}
+
+.friendAva{
+    width: 30px;
+    border-radius: 50%;
+}
+
+.friend{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
