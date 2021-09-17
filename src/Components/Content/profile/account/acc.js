@@ -1,15 +1,19 @@
 import profileClass from './account.module.css'
+import Preloader from "../../../Common/Preloader/Preloader";
 
-const Acc = () => {
+const Acc = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
+
     return (
         <div className={profileClass.profile}>
-            <img alt="" className={profileClass.accHeader} src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300" />
-            <img alt="" className={profileClass.avatar} src="https://html5css.ru/howto/img_avatar2.png" />
+            <img alt="" className={profileClass.accHeader} src={props.profile.photos.large} />
+            <img alt="" className={profileClass.avatar} src={props.profile.photos.small} />
             <div className="info">
-                <p className={profileClass.name} >Name</p>
-                <p className={profileClass.name}>Surname</p>
-                <p>Some Text</p>
-                <p>Some date</p>
+                <p className={profileClass.name} >{props.profile.fullName}</p>
+                <p>{props.profile.aboutMe}</p>
+                <p>{props.profile.lookingForAJobDescription}</p>
             </div>
         </div>
     )

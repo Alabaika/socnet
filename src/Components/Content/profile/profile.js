@@ -1,19 +1,16 @@
-import contClasses from './profile.module.css'
 import Acc from './account/acc'
-import Posts from './posts/posts'
-import {updateNewPostText} from "../../../redux/state";
+import MyPostsContainer from "./posts/MyPostsContainer";
 
 
 const Profile = (props) => {
 
 
 
+
     return (
         <div>
-            <Acc />
-            <Posts postData={props.profilePage.postData}
-                   newPostText={props.profilePage.newPostText}
-                   dispatch={props.dispatch}/>
+            <Acc profile={props.profile}/>
+            <MyPostsContainer />
         </div>
     )
 }

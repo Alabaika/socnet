@@ -1,0 +1,38 @@
+
+.userPhoto{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.upCl{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.imgBlock{
+    width: 20%;
+}
+
+.textBlock{
+    min-width: 75%;
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.selectedPage{
+    font-weight: 600;
+}
+
+.paginatorS{
+    width: 80vw;
+}
+
+.paginatorS span{
+    padding-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
