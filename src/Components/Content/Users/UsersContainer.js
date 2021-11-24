@@ -9,14 +9,14 @@ import {
 import {connect} from "react-redux";
 import Users from "./Users";
 import Preloader from "../../Common/Preloader/Preloader";
-import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {
     getCurrentPage,
     getFollowingInProgress,
     getIsFetching,
     getPageSize,
-    getTotalUsersCount, getUsers
+    getTotalUsersCount,
+    getUsers,
 } from "../../../redux/usersSelectors";
 
 

@@ -23,16 +23,3 @@
     padding-right: 10px;
 }
 
-.selectedPage{
-    font-weight: 600;
-}
-
-.paginatorS{
-    width: 80vw;
-}
-
-.paginatorS span{
-    padding-right: 10px;
-    cursor: pointer;
-    display: inline-block;
-}
