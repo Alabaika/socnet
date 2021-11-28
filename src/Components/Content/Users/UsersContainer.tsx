@@ -18,15 +18,40 @@ import {
     getTotalUsersCount,
     getUsers,
 } from "../../../redux/usersSelectors";
+import {UserType} from "../../../Types/types";
+import {AppStateType} from "../../../redux/redux-store";
+
+type MapStatePropsType = {
+    currentPage: number
+    pageSize: number
+    isFetching: boolean
+    totalUsersCount: number
+    users: Array<UserType>
+    followingInProgress: Array<number>
+}
+type MapDispatchPropsType = {
+    getUsers: ( currentPage: number, pageSize: number ) => void
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
+}
+type OwnPropsType = {
+
+}
 
 
-class UsersContainer  extends React.Component {
+type PropsType = MapStatePropsType & MapDispatchPropsType & OwnPropsType
+
+class UsersContainer  extends React.Component<PropsType> {
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
+        const {currentPage, pageSize} = this.props
+        this.props.getUsers(currentPage, pageSize)
+        // this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
-    onPageChanged = (pageNumber) => {
-        this.props.getUsers(pageNumber, this.props.pageSize);
-        this.props.setCurrentPage(pageNumber);
+    onPageChanged = (pageNumber: number) => {
+        const {pageSize} = this.props
+        this.props.getUsers(pageNumber, pageSize)
+        // this.props.getUsers(pageNumber, this.props.pageSize);
+        // this.props.setCurrentPage(pageNumber);
     }
     render() {
         return <>
@@ -45,7 +70,7 @@ class UsersContainer  extends React.Component {
 }
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType): MapStatePropsType => {
     return {
         users: getUsers(state),
         pageSize: getPageSize(state),
@@ -58,7 +83,8 @@ let mapStateToProps = (state) => {
 
 
 export default compose (
-    connect(mapStateToProps,
-    {follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers: requestUsers },
-
-))(UsersContainer)
+    // @ts-ignore
+    connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
+        mapStateToProps,
+    {follow, unfollow, getUsers: requestUsers })
+)(UsersContainer)
